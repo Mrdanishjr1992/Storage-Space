@@ -122,12 +122,12 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
-    '/catcollector/main_app/static/'
+    '/storagespace/main_app/static/'
 ]
 STATIC_URL = '/static/'
 
 # LOGIN_URL = '/login/'
-LOGIN_REDIRECT_URL = '/home'
+LOGIN_REDIRECT_URL = 'profile/'
 
 # LOGOUT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'

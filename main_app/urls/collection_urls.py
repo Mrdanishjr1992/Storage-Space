@@ -1,2 +1,2 @@
 from django.urls import path 
-from . import collection_views
+from ..views import collection_views

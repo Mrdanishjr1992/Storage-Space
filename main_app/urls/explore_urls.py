@@ -1,2 +1,2 @@
 from django.urls import path 
-from . import public_views
+from ..views import explore_views, comment_views, like_views

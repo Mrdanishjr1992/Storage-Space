@@ -1,9 +1,9 @@
 from django.urls import path 
-from . import register_views
+from ..views import register_views
 
 urlpatterns = [
     # HOME-PAGE
-    path("/", register_views.home, name="home"),
+    path("/", register_views.register, name="register"),
     
     # ABOUT-PAGE
     path("about/", register_views.about, name="about"),
