@@ -1,0 +1,5 @@
+{
+    // "python.pythonPath": "/Users/mohamedabdulah/code/sei/deliverables/Storage_Space/.env/bin/python3.9",
+	"emmet.includeLanguages": { "django-html": "html" },
+	"python.pythonPath": ".env/bin/python3"
+}
