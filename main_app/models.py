@@ -28,6 +28,7 @@ class Profile(models.Model):
 
 class Collection(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    title = models.CharField(max_length=30 ,default='')
     image = models.CharField(max_length=255, default='')
     body = models.CharField(max_length=255, default='', blank=False)
     date = models.DateTimeField(auto_now=True)
@@ -48,7 +49,6 @@ class Comment(models.Model):
 class Like(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     collection = models.ForeignKey(Collection, on_delete=models.CASCADE)
-    comment = models.ForeignKey(Comment, on_delete=models.CASCADE)
     date = models.DateTimeField(auto_now=True)
     
     def __str__(self):
