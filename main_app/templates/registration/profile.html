@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}
+    Profile
+{% endblock title %}
+{% block content %}
+            <h1>Welcome Back {{ user }}!!</h1>
+    <section class="profile-page">
+        <div class="profile-form container">
+            <h4>{{ user }}to account!</h4>
+            <form class="form form-control" action="{% url 'profile_edit' %}" method="POST">
+                {% csrf_token %} 
+                {{ form.as_p}}{{ info_form.as_p}}
+                <input type="submit" class="btn btn-primary" value="Edit">
+            </form>
+        </div>
+    </section>
+{% endblock content %}

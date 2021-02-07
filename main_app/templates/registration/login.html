@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}
+    Login
+{% endblock title %}
+{% block content %}
+    {% if error %}
+        <p>{{ error_message }}</p>
+    {% endif %}
+    <section class="register-page">
+        <article class="register-p">
+            <h1>Welcome Back!!</h1>
+        </article>
+        <div class="register-form container">
+            <h4>Login to account!</h4>
+            <form class="form form-control" action="{% url 'login' %}" method="POST">
+                {% csrf_token %} {{ form }}
+                <input type="submit" class="btn btn-primary" value="login">
+                <input type="hidden" class="btn btn-primary" value="{{ next }}" name="next">
+            </form>
+        </div>
+    </section>
+{% endblock content %}

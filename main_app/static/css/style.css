@@ -1,0 +1,54 @@
+body {
+	text-align: center;
+	height: 90vh;
+}
+main {
+	display: flex;
+	flex-direction: row;
+}
+.nav {
+	background-color: cornflowerblue;
+}
+.footer {
+	background-color: cornflowerblue;
+	width: 100%;
+}
+.register-page {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	padding: 2em;
+}
+.register-form {
+	background-color: rgb(219, 213, 204);
+	padding: 1em;
+	margin: 1em;
+}
+.register-p {
+	padding: 2em;
+	margin: 1em auto;
+	background-color: rgba(95, 158, 160, 0.351);
+	color: rgb(0, 0, 0);
+	max-width: 50%;
+	border: cornflowerblue solid 2px;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	-ms-border-radius: 2px;
+	-o-border-radius: 2px;
+}
+.profile-page{
+	
+}
+.profile-form{
+	width: fit-content;
+	margin: 1em auto;
+}
+p>label {
+	color: black;
+	font-size: 1em;
+}
+.helptext {
+	color: brown;
+}
+

@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'storagespace_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'storage_space',
+        'NAME': 'storagespace',
     }
 }
 
@@ -122,12 +122,12 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
-    '/storagespace/main_app/static/'
+    '/storagespace/main_app/static/css/main.css'
 ]
 STATIC_URL = '/static/'
 
-# LOGIN_URL = '/login/'
-LOGIN_REDIRECT_URL = 'profile/'
+# LOGIN_URL = '/login'
+LOGIN_REDIRECT_URL = '/profile'
 
 # LOGOUT_URL = '/'
-LOGOUT_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = 'login'

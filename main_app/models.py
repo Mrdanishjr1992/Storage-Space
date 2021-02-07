@@ -3,53 +3,48 @@ from django.contrib.auth.models import User
 from datetime import date
 
 # Create your models here.
-GENDER = [
-    ('N','None'),
-    ('M','Male'),
-    ('F','Female'),
-    ('O','Other'),
-]
-class Profile(models.Model):
-    user = models.OneToOneField(User, related_name='profile', primary_key=True, on_delete=models.CASCADE)
-    nickname = models.CharField(max_length=30 ,default='')
-    dob = models.DateField()
-    bio = models.TextField(max_length=255 ,default='')
-    profile_pic = models.CharField(max_length=255 ,default='')
-    background_pic = models.CharField(max_length=255, default='')
-    storage_name = models.CharField(max_length=30 ,default='')
+
+class UserInfo(models.Model):
+    GENDER = [
+        ('N','None'),
+        ('M','Male'),
+        ('F','Female'),
+        ('O','Other'),
+    ]
+    nickname = models.CharField(max_length=30)
+    bio = models.TextField(max_length=255)
+    profile_pic = models.CharField(max_length=255)
+    background_pic = models.CharField(max_length=255)
+    storage_name = models.CharField(max_length=30)
     dark_theme = models.BooleanField(default=False)
     gender = models.CharField(
         max_length=1,
         choices=GENDER,
         default=GENDER[0][0]
     )
-    def __str__(self):
-        return super().__str__(self)
+    user_id = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
+
 
 class Collection(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    title = models.CharField(max_length=30 ,default='')
-    image = models.CharField(max_length=255, default='')
-    body = models.CharField(max_length=255, default='', blank=False)
-    date = models.DateTimeField(auto_now=True)
+    title = models.CharField(max_length=30)
+    image = models.CharField(max_length=255)
+    body = models.CharField(max_length=255)
+    date = models.DateTimeField(auto_now_add=True)
     public = models.BooleanField(default=False)
+    user_id = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
     
-    def __str__(self):
-        return super().__str__(self)
+
 
 class Comment(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    collection = models.ForeignKey(Collection, on_delete=models.CASCADE)
-    body = models.CharField(max_length=255, default='', blank=False)
-    date = models.DateTimeField(auto_now=True)
+    body = models.CharField(max_length=255)
+    date = models.DateTimeField(auto_now_add=True)
+    collection_id = models.ForeignKey(Collection, null=True, on_delete=models.CASCADE)
+    user_id = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
     
-    def __str__(self):
-        return super().__str__(self)
+
 
 class Like(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    collection = models.ForeignKey(Collection, on_delete=models.CASCADE)
-    date = models.DateTimeField(auto_now=True)
+    date = models.DateTimeField(auto_now_add=True)
+    collection_id = models.ForeignKey(Collection, null=True, on_delete=models.CASCADE)
+    user_id = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
     
-    def __str__(self):
-        return super().__str__(self)
