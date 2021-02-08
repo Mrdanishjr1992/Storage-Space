@@ -21,6 +21,13 @@ Coming soon.....
 - CSS
 - django.html
 
+## Models
+- User
+- User-Info
+- Collection
+- Comment
+- Like
+
 ## Wire-Frames
 Need to upload them.
 
