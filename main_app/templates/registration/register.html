@@ -12,8 +12,8 @@
     <section class="register-page">
         <div class="register-form container">
             <h4>Register for a free account today!</h4>
-            <form class="form form-control" action="{% url 'register' %}" method="POST">
-            {% csrf_token %} {{ form.as_p }}
+            <form  action="{% url 'register' %}" method="POST">
+                {% csrf_token %} {{ form }}
             <input type="submit" class="btn btn-primary" value="register">
             </form>
         </div>

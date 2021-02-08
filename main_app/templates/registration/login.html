@@ -9,15 +9,13 @@
     <article class="register-p">
         <h1 class="title">Welcome Back!!</h1>
     </article>
-    <section class="register-page">
-        <div class="register-form container">
-            <h4>Login to account!</h4>
-            <form class="form form-control" action="{% url 'login' %}" method="POST">
-                {% csrf_token %}
-                {{ form.as_p }}
-                <input type="submit" class="btn btn-primary" value="login">
-                <input type="hidden" value="{{ next }}" name="next">
-            </form>
-        </div>
-    </section>
+    <div class="register-page">
+        <h4>Login to account!</h4>
+        <form action="{% url 'login' %}" method="POST">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" class="btn btn-primary" value="login">
+            <input type="hidden" value="{{ next }}" name="next">
+        </form>
+    </div>
 {% endblock content %}

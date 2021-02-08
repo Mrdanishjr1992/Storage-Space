@@ -7,24 +7,24 @@
     <section class="register-page">
         <div class="profile-form container">
             <h4>{{ user.username }}'s account.</h4>
-            <button id="btn1" class="btn">User Form</button>
+            <button id="btn1" class="btn">User Info</button>
             <div id="form1-toggle">
-                <form class="form register-form" action="{% url 'profile_edit'  %}" method="POST">
+                <form class="register-form" action="{% url 'profile_edit'  %}" method="POST">
                     {% csrf_token %} {{ form }}
                     <input type="submit" class="btn btn-primary" value="Edit">
                 </form>
             </div>
             <hr>
-            <button id="btn2" class="btn">User-Info Form</button>
+            <button id="btn2" class="btn">profile Info</button>
             <div id="form2-toggle">
-                <form class="form register-form" action="{% url 'profile_edit'  %}" method="POST">
+                <form class="register-form" action="{% url 'profile_edit'  %}" method="POST">
                     {% csrf_token %} {{ info_form }}
                     <input type="submit" class="btn btn-primary" value="Edit">
                 </form>
             </div>
                 <form action="{% url 'profile_delete'  user.id %}" method="POST">
                     {% csrf_token %}
-                    <input type="submit" class="btn btn-floating" value="delete">
+                    <input type="submit" class="btn" value="delete">
                 </form>
         </div>
     </section>

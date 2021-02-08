@@ -26,12 +26,10 @@
         {% endif %}
     </div>
     <hr>
-    <div id="collection-form">
-        <form class="form register-form" action="{% url 'collection_create'  %}" method="post">
+    <div class="register-page">
+        <form action="{% url 'collection_create'  %}" method="post">
             {% csrf_token %} 
-            <div>
                 {{ form }}
-            </div>
             <input type="submit" class="btn" value="Create">
         </form>
     </div>

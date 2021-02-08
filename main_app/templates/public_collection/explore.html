@@ -10,12 +10,14 @@
     <div class="carousel">
         {% if collections.count %}
             {% for collection in collections %}
-                    <div class="carousel-item"  id="carousel-item">
-                        <p class="card-content">{{  collection.title }}</p>
-                        <p class="card-content">Content: {{ collection.body }}</p>
-                        <p class="card-content">By: {{ collection.user }}</p>
-                        <img class="circle" src="{{ collection.image }}" alt="Image">
-                    </div>
+                <a href="{% url 'explore_comment' collection.id %}">
+                        <div class="carousel-item"  id="carousel-item">
+                            <p class="card-content">{{  collection.title }}</p>
+                            <p class="card-content">Content: {{ collection.body }}</p>
+                            <p class="card-content">By: {{ collection.user }}</p>
+                            <img class="circle" src="{{ collection.image }}" alt="Image">
+                        </div>
+                </a>
             {% endfor %}
         {% else %}
             <div class="card">
@@ -27,9 +29,11 @@
         {% if comments.count %}
             {% for comment in comments %}
                 <article class="comment-card">
-                    <p>{{ comment.user }}</p>
-                    <p>{{ comment.collection_id }}</p>
-                    <p>{{ comment.body }}</p>
+                    <p>User: {{ comment.user }}</p>
+                    <p>Collection: {{ comment.collection_id }}</p>
+                    <div class="comment">
+                        <p>Comment: {{ comment.body }}</p>
+                    </div>
                 </article>
             {% endfor %}
         {% else %}
