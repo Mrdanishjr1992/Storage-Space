@@ -25,7 +25,7 @@ Coming soon.....
 - User
 - User-Info
 - Collection
-- Comment
+- Comment 
 - Like
 
 ## Wire-Frames
