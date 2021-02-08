@@ -135,7 +135,7 @@ input,input[textarea] ,input[text],input[password],input[number],input[select] {
 	color: rgb(255, 255, 255);
 	margin-bottom: 3em;
 	border-top: cornflowerblue solid 5px;
-	overflow: scroll;
+	overflow: hidden;
 }
 #main {
 	width: max-content;
