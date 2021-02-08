@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'yq73^clzx&fs4co7b5d#%4@!l_mhn8!y#5--1ipigrfo)etil9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'storagespace_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'storagespace',
+        'NAME': BASE_DIR | 'storagespace'
     }
 }
 
