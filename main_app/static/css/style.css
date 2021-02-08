@@ -1,12 +1,11 @@
 body {
 	text-align: center;
-	width: 90%;
+	width: 100%;
 	height: 100vh;
-	background-image: url(https://c4.wallpaperflare.com/wallpaper/442/14/493/abstract-texture-pattern-design-wallpaper-preview.jpg);
-	background-repeat: no-repeat;
-	background-size: contain;
-	background-position: center;
-	background-attachment: fixed;
+	background: rgb(255,255,255);
+	background: radial-gradient(circle, rgba(255,255,255,0.9248074229691877) 0%, rgba(51,51,56,1) 100%);
+	padding: 0;
+	margin: 0;
 }
 footer {
 	background-color: cornflowerblue;
@@ -90,7 +89,8 @@ label {
 	display: none;	
 }
 .card {
-	background-color: rgba(255, 255, 255, 0.824);
+	background: rgb(255,255,255);
+	background: radial-gradient(circle, rgba(255,255,255,0.9248074229691877) 0%, rgba(51,51,56,1) 100%);
 	margin: 2em;
 	padding: 2em;
 	width: 80%;
@@ -103,38 +103,47 @@ label {
 	margin: 4em auto;
 }
 #carousel-item {
-	background-color: rgb(255, 255, 255);
-	
+	background: rgb(255,255,255);
+	background: radial-gradient(circle, rgba(255,255,255,0.9248074229691877) 0%, rgba(51,51,56,1) 100%);
+	padding: 2em;
+	box-sizing: border-box;
 }
 #dropdown1, #dropdown2 {
 	width: fit-content;
 }
 .title, .intro-msg {
-	background-color: rgba(240, 248, 255, 0.769);
-	padding: 2em;
+	background: rgb(131,131,133);
+	background: linear-gradient(270deg, rgba(131,131,133,0.8239670868347339) 0%, rgba(97,94,94,0.9023984593837535) 51%, rgba(143,143,143,0.8071603641456583) 100%);
+	padding: .5em;
+	color: aliceblue;
 }
 .about-title {
 	margin-top: 12em;
+	color: black;
 }
 .comment-area {
 	background-image: url('https://c4.wallpaperflare.com/wallpaper/417/673/89/black-texture-background-wallpaper-preview.jpg');
 	height: 40vh;
 	color: rgb(255, 255, 255);
 	margin-bottom: 3em;
+	border-top: cornflowerblue solid 5px;
 }
 #main {
+	width: max-content;
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	margin: 0 auto;
+	padding: 0;
 }
 .left-pillar {
-	width: 20%;
 	height: 100vh;
 	background-color: black;
 }
 
-.rigth-pillar {
-	width: 10%;
+.right-pillar {
 	height: 100vh;
 	background-color: black;
+}
+.center-pillar {
+	flex-grow: 4;
 }
