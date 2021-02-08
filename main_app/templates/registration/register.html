@@ -6,10 +6,10 @@
     {% if error %}
         <p>{{ error_message }}</p>
     {% endif %}
+    <article class="register-p">
+        <p class="intro-msg">Have you ever wished for a place to store your thoughts, ideas and interests. Maybe even share some of them to the public to get comments and reviews. Well StorageSpace was built for just that in mind. A place where you have the freedom to store anything in your mind, to your personal Collection.</p>
+    </article>
     <section class="register-page">
-        <article class="register-p">
-            <p>Have you ever wished for a place to store your thoughts, ideas and interests. Maybe even share some of them to the public to get comments and reviews. Well StorageSpace was built for just that in mind. A place where you have the freedom to store anything in your mind, to your personal Collection.</p>
-        </article>
         <div class="register-form container">
             <h4>Register for a free account today!</h4>
             <form class="form form-control" action="{% url 'register' %}" method="POST">

@@ -1,4 +1,6 @@
 from django.db import models
+from django import forms
+from django.urls import reverse
 from django.contrib.auth.models import User
 from datetime import date
 
@@ -22,29 +24,38 @@ class UserInfo(models.Model):
         choices=GENDER,
         default=GENDER[0][0]
     )
-    user_id = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    def __str__(self):
+        return self.nickname
 
 
 class Collection(models.Model):
+    PUBLIC = [
+        ('True','True'),
+        ('False','False')
+    ]
     title = models.CharField(max_length=30)
     image = models.CharField(max_length=255)
-    body = models.CharField(max_length=255)
-    date = models.DateTimeField(auto_now_add=True)
-    public = models.BooleanField(default=False)
-    user_id = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
-    
+    body = models.TextField(max_length=255)
+    public = models.CharField(
+        max_length=5,
+        choices=PUBLIC,
+        default=PUBLIC[1][0]
+    )
+    user = models.ForeignKey(User,  on_delete = models.CASCADE)
+    def __str__(self):
+        return self.title
 
 
 class Comment(models.Model):
     body = models.CharField(max_length=255)
-    date = models.DateTimeField(auto_now_add=True)
-    collection_id = models.ForeignKey(Collection, null=True, on_delete=models.CASCADE)
-    user_id = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
-    
+    collection_id = models.ForeignKey(Collection, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    def __str__(self):
+        return self.body
 
 
 class Like(models.Model):
-    date = models.DateTimeField(auto_now_add=True)
-    collection_id = models.ForeignKey(Collection, null=True, on_delete=models.CASCADE)
-    user_id = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
-    
+    collection_id = models.ForeignKey(Collection, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+

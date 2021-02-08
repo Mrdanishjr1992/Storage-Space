@@ -1,35 +1,45 @@
 body {
 	text-align: center;
-	height: 90vh;
+	width: 90%;
+	height: 100vh;
+	background-image: url(https://c1.wallpaperflare.com/preview/542/863/702/indoor-construction-interior-brick.jpg);
 }
 main {
 	display: flex;
 	flex-direction: row;
 }
-.nav {
-	background-color: cornflowerblue;
-}
-.footer {
+footer {
 	background-color: cornflowerblue;
 	width: 100%;
+	position: fixed;
+	bottom: 0%;
 }
-.register-page {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: flex-start;
-	padding: 2em;
+select {
+	display: block!important;
+}
+.nav{
+	background-color: cornflowerblue;
+}
+.register-p {
+	padding: .5em;
+	font-weight: 400;
+	font-size: 2em;
 }
 .register-form {
 	background-color: rgb(219, 213, 204);
 	padding: 1em;
 	margin: 1em;
 }
-.register-p {
-	padding: 2em;
-	margin: 1em auto;
-	background-color: rgba(95, 158, 160, 0.351);
+.register-page {
+	text-align: center;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	width: 80%;
+	padding: 1em;
+	margin: 3em auto;
+	background-color: rgba(95, 158, 160, 0.906);
 	color: rgb(0, 0, 0);
-	max-width: 50%;
 	border: cornflowerblue solid 2px;
 	border-radius: 2px;
 	-webkit-border-radius: 2px;
@@ -37,18 +47,66 @@ main {
 	-ms-border-radius: 2px;
 	-o-border-radius: 2px;
 }
-.profile-page{
-	
+#collection-form {
+	background-color: rgba(95, 158, 160, 0.906);
+	color: rgb(0, 0, 0);
+	border: cornflowerblue solid 2px;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	-ms-border-radius: 2px;
+	-o-border-radius: 2px;
+
 }
 .profile-form{
 	width: fit-content;
 	margin: 1em auto;
 }
-p>label {
-	color: black;
-	font-size: 1em;
+label {
+	color: black!important;
+	font-size: 1em!important;
 }
 .helptext {
 	color: brown;
 }
-
+.dropdown-trigger {
+	padding-right: 3em;
+}
+.dropdown-content {
+	width: 2em;
+	margin: 2em;
+}
+#collection-form {
+	border: 2px cornflowerblue solid;
+	padding: 4em;
+}
+.btn {
+	margin: 2em;
+	background-color: coral;
+}
+#form1-toggle {
+	display: none;	
+}
+#form2-toggle {
+	display: none;	
+}
+.card {
+	background-color: rgba(255, 255, 255, 0.824);
+	margin: 2em;
+	padding: 2em;
+	box-sizing: border-box;
+}
+.circle {
+	width: 100%;
+}
+#detail-page {
+	margin: 4em auto;
+}
+#carousel-item {
+	background-color: rgb(255, 255, 255);
+	
+}
+.title, .intro-msg {
+	background-color: rgba(240, 248, 255, 0.769);
+	padding: 5em;
+}

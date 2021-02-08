@@ -13,16 +13,14 @@ def register(request):
     # session_key = request.session._get_session_key()
 
     # if session_key:
-    #     return redirect('profile')
+    #     return redirect('collection')
 
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
         if form.is_valid():
             user = form.save()
-            user_info = UserInfo(user_id= user)
-            user_info.save()
             login(request, user)
-            return redirect('profile', user_id= user.id)
+            return redirect('profile')
         else:  
             error_message = 'Invalid signup credintials, Try agin.'
             

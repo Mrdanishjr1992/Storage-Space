@@ -1,23 +1,21 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    My Collection
+    Explore
 {% endblock title %}
 
 
 {% block content %}
-    <h1 class="title">Your Collection.</h1>
+<h1 class="title">Explore Public Collections.</h1>
     <div class="carousel">
         {% if collections.count %}
             {% for collection in collections %}
-                <a href="{% url 'collection_detail' collection.id %}">
                     <div class="carousel-item"  id="carousel-item">
                         <p class="card-content">{{  collection.title }}</p>
-                        <p class="card-content">Public : {{ collection.public }}</p>
-                        <p class="card-content">{{ collection.body }}</p>
+                        <p class="card-content">Content: {{ collection.body }}</p>
+                        <p class="card-content">By: {{ collection.user }}</p>
                         <img class="circle" src="{{ collection.image }}" alt="Image">
                     </div>
-                </a>
             {% endfor %}
         {% else %}
             <div class="card">
@@ -25,15 +23,18 @@
             </div>
         {% endif %}
     </div>
-    <hr>
-    <div id="collection-form">
-        <form class="form register-form" action="{% url 'collection_create'  %}" method="post">
-            {% csrf_token %} 
-            <div>
-                {{ form }}
-            </div>
-            <input type="submit" class="btn" value="Create">
-        </form>
+    <div class="comment-area">
+        {% if comments.count %}
+            {% for comment in comments %}
+                <article class="comment-card">
+                    <p>{{ comment.user }}</p>
+                    <p>{{ comment.collection_id }}</p>
+                    <p>{{ comment.body }}</p>
+                </article>
+            {% endfor %}
+        {% else %}
+            <article class="comment-card">No comments....</article>
+        {% endif %}
     </div>
 {% endblock content %}
 

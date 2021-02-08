@@ -119,15 +119,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
-    '/storagespace/main_app/static/css/main.css'
+    '/storagespace/main_app/static/css/style.css'
 ]
 STATIC_URL = '/static/'
 
 # LOGIN_URL = '/login'
-LOGIN_REDIRECT_URL = '/profile'
+LOGIN_REDIRECT_URL = 'profile'
 
 # LOGOUT_URL = '/'
-LOGOUT_REDIRECT_URL = 'login'
+LOGOUT_REDIRECT_URL = 'register'

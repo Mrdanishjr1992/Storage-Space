@@ -8,6 +8,7 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<title>Storage Space - {% block title %}{% endblock %}</title>
 		<link rel="stylesheet" href="{% static 'css/style.css' %}">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
@@ -16,25 +17,27 @@
 	</head>
 	<body>
 		<header class="header navbar-fixed">
-			{% if User.is_authenticated %}
-				<nav class="nav show-on-med-and-down">
+			{% if user.is_authenticated %}
+				<nav class="nav">
 					<div class="nav-wrapper">
 						<ul>
 							<li class="nav-link">
-								<a href="" class="left brand-logo">&nbsp;&nbsp;StorageSpace</a>
+								<a href="{% url 'explore' %}" class="left brand-logo">&nbsp;&nbsp;StorageSpace</a>
 							</li>
 						</ul>
-						<a class="dropdown-trigger right" href="#" data-target="dropdown1">Menu</a>
+						<a class="dropdown-trigger right" href="" data-target="dropdown1">
+							<i class="material-icons">menu</i>
+						</a>
 						<ul class="dropdown-content" id="dropdown1">
-							<li class="nav-link"><a href="">My Collection</a></li>
-							<li class="nav-link"><a href="">Explore Collections</a></li>
+							<li class="nav-link"><a href="{% url 'collection' %}">My Collection</a></li>
+							<li class="nav-link"><a href="{% url 'explore' %}">Explore Collections</a></li>
 							<li class="nav-link"><a href="{% url 'profile' %}">Profile</a></li>
-								<li class="nav-link"><a href="{% url 'about' %}">about</a></li>
-							<li class="nav-link"><a href="">Logout</a></li>
+							<li class="nav-link"><a href="{% url 'about' %}">about</a></li>
+							<li class="nav-link"><a href="{% url 'logout' %}">Logout</a></li>
 						</ul>
 					</div>
 				</nav>
-				<nav class="nav show-on-large">
+				{% comment %} <nav class="nav hide-on-medium-and-up">
 					<div class="nav-wrapper">
 						<ul>
 							<li class="nav-link">
@@ -42,59 +45,68 @@
 							</li>
 						</ul>
 						<ul class="right">
-							<li class="nav-link"><a href="">My Collection</a></li>
-							<li class="nav-link"><a href="">Explore Collections</a></li>
+							<li class="nav-link"><a href="{% url 'collection' %}">My Collection</a></li>
+							<li class="nav-link"><a href="{% url 'explore' %}">Explore Collections</a></li>
 							<li class="nav-link"><a href="{% url 'profile' %}">Profile</a></li>
-								<li class="nav-link"><a href="{% url 'about' %}">about</a></li>
-							<li class="nav-link"><a href="">Logout</a></li>
+							<li class="nav-link"><a href="{% url 'about' %}">about</a></li>
+							<li class="nav-link"><a href="{% url 'logout' %}">Logout</a></li>
 						</ul>
 					</div>
-				</nav>
+				</nav> {% endcomment %}
 			{% else %}
-				<nav class="nav show-on-med-and-down">
+				<nav class="nav">
 					<div class="nav-wrapper">
 						<ul>
 							<li class="nav-link">
 								<a href="{% url 'register' %}" class="left brand-logo">&nbsp;&nbsp;StorageSpace</a>
 							</li>
 						</ul>
-						<a class="dropdown-trigger right" href="#" data-target="dropdown1">Menu</a>
-						<ul class="dropdown-content" id="dropdown1">
-							<li class="nav-link"><a href="">Explore Collections</a></li>
+						<a class="dropdown-trigger right" href="" data-target="dropdown2">
+							<i class="material-icons">menu</i>
+						</a>
+						<ul class="dropdown-content" id="dropdown2">
+							<li class="nav-link"><a href="{% url 'explore' %}">Explore Collections</a></li>
 							<li class="nav-link"><a href="{% url 'about' %}">about</a></li>
 							<li class="nav-link"><a href="{% url 'login' %}">Login</a></li>
 						</ul>
 					</div>
 				</nav>
-				<nav class="nav show-on-large">
+				{% comment %} <nav class="nav hide-on-med-and-up">
 					<div class="nav-wrapper">
 						<ul>
-							<li class="nav-link">
-								<a href="{% url 'register' %}" class="left brand-logo">&nbsp;&nbsp;StorageSpace</a>
-							</li>
+							<li class="nav-link"><a href="{% url 'register' %}" class="left brand-logo">&nbsp;&nbsp;StorageSpace</a></li>
 						</ul>
 						<ul class="right">
-							<li class="nav-link"><a href="">Explore Collections</a></li>
-								<li class="nav-link"><a href="{% url 'about' %}">about</a></li>
-								<li class="nav-link"><a href="{% url 'login' %}">Login</a></li>
+							<li class="nav-link"><a href="{% url 'explore' %}">Explore Collections</a></li>
+							<li class="nav-link"><a href="{% url 'about' %}">about</a></li>
+							<li class="nav-link"><a href="{% url 'login' %}">Login</a></li>
 						</ul>
 					</div>
-				</nav>
+				</nav> {% endcomment %}
 			{% endif %}
 		</header>
 		<main class="container"> {% block content %} {% endblock %} </main>
 		<br>
-		<footer class="footer page-footer">
+
+
+		<footer class="footer">
 			<div class="footer">
 				All Rights Reserved, &copy; 2021 StorageSpace &nbsp;
 			</div>
 		</footer>
 
 		<script>
-			document.addEventListener('DOMContentLoaded', ()=>{
-				const nav = document.querySelector('dropdown-trigger');
-				M.Dropdown.init(nav);
+			document.addEventListener('DOMContentLoaded', () => {
+				var dropdown = document.querySelectorAll('.dropdown-trigger');
+				M.Dropdown.init(dropdown);
 			});
+			{% comment %} window.addEventListener('resize', () => {
+				var sizing = document.querySelectorAll(,'.show-on-large','show-on-med-and-down');
+				M.Dropdown.init(sizing);
+			}); {% endcomment %}
 		</script>
+			{% block script %}
+			
+			{% endblock script %}
 	</body>
 </html>

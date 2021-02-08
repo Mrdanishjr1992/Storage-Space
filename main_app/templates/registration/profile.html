@@ -3,15 +3,47 @@
     Profile
 {% endblock title %}
 {% block content %}
-            <h1>Welcome Back {{ user }}!!</h1>
-    <section class="profile-page">
+    <h1 class="title">Welcome Back {{ user.username }}!</h1>
+    <section class="register-page">
         <div class="profile-form container">
-            <h4>{{ user }}to account!</h4>
-            <form class="form form-control" action="{% url 'profile_edit' %}" method="POST">
-                {% csrf_token %} 
-                {{ form.as_p}}{{ info_form.as_p}}
-                <input type="submit" class="btn btn-primary" value="Edit">
-            </form>
+            <h4>{{ user.username }}'s account.</h4>
+            <button id="btn1" class="btn">User Form</button>
+            <div id="form1-toggle">
+                <form class="form register-form" action="{% url 'profile_edit'  %}" method="POST">
+                    {% csrf_token %} {{ form }}
+                    <input type="submit" class="btn btn-primary" value="Edit">
+                </form>
+            </div>
+            <hr>
+            <button id="btn2" class="btn">User-Info Form</button>
+            <div id="form2-toggle">
+                <form class="form register-form" action="{% url 'profile_edit'  %}" method="POST">
+                    {% csrf_token %} {{ info_form }}
+                    <input type="submit" class="btn btn-primary" value="Edit">
+                </form>
+            </div>
         </div>
     </section>
 {% endblock content %}
+
+{% block script %}
+<script>
+    const form1 = document.getElementById('form1-toggle');
+    document.getElementById('btn1').addEventListener('click', () => {
+        if (form1.style.display === 'none'){
+            form1.style.display = 'block';
+        } else {
+            form1.style.display = 'none';
+        }
+    });
+    const form2 = document.getElementById('form2-toggle');
+    document.getElementById('btn2').addEventListener('click', () => {
+        if (form2.style.display === 'none'){
+            form2.style.display = 'block';
+        } else {
+            form2.style.display = 'none';
+        }
+    });
+</script>
+{% endblock script %}
+
