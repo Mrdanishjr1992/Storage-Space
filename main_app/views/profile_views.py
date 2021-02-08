@@ -30,8 +30,8 @@ def profile_edit(request):
     return redirect('profile')
 
 @login_required
-def profile_delete(request):
-    user = User.objects.get(username=request.user)
+def profile_delete(request, user_id):
+    user = User.objects.get(id=user_id)
     user.delete()
     
     return redirect('register')

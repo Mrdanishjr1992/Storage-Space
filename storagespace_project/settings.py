@@ -126,7 +126,7 @@ STATICFILES_DIRS = [
 STATIC_URL = '/static/'
 
 # LOGIN_URL = '/login'
-LOGIN_REDIRECT_URL = 'profile'
+LOGIN_REDIRECT_URL = 'explore'
 
 # LOGOUT_URL = '/'
-LOGOUT_REDIRECT_URL = 'register'
+LOGOUT_REDIRECT_URL = 'login'

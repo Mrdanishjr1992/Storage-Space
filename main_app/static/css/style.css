@@ -2,11 +2,11 @@ body {
 	text-align: center;
 	width: 90%;
 	height: 100vh;
-	background-image: url(https://c1.wallpaperflare.com/preview/542/863/702/indoor-construction-interior-brick.jpg);
-}
-main {
-	display: flex;
-	flex-direction: row;
+	background-image: url(https://c4.wallpaperflare.com/wallpaper/442/14/493/abstract-texture-pattern-design-wallpaper-preview.jpg);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	background-attachment: fixed;
 }
 footer {
 	background-color: cornflowerblue;
@@ -38,9 +38,9 @@ select {
 	width: 80%;
 	padding: 1em;
 	margin: 3em auto;
-	background-color: rgba(95, 158, 160, 0.906);
+	background-color: cornflowerblue;
 	color: rgb(0, 0, 0);
-	border: cornflowerblue solid 2px;
+	border: black solid 2px;
 	border-radius: 2px;
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
@@ -48,9 +48,9 @@ select {
 	-o-border-radius: 2px;
 }
 #collection-form {
-	background-color: rgba(95, 158, 160, 0.906);
+	background-color: cornflowerblue;
 	color: rgb(0, 0, 0);
-	border: cornflowerblue solid 2px;
+	border: black solid 2px;
 	border-radius: 2px;
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
@@ -70,14 +70,13 @@ label {
 	color: brown;
 }
 .dropdown-trigger {
-	padding-right: 3em;
+	padding-right: 4em;
 }
 .dropdown-content {
-	width: 2em;
-	margin: 2em;
+	width: fit-content;
 }
 #collection-form {
-	border: 2px cornflowerblue solid;
+	border: 2px black solid;
 	padding: 4em;
 }
 .btn {
@@ -94,6 +93,7 @@ label {
 	background-color: rgba(255, 255, 255, 0.824);
 	margin: 2em;
 	padding: 2em;
+	width: 80%;
 	box-sizing: border-box;
 }
 .circle {
@@ -106,7 +106,35 @@ label {
 	background-color: rgb(255, 255, 255);
 	
 }
+#dropdown1, #dropdown2 {
+	width: fit-content;
+}
 .title, .intro-msg {
 	background-color: rgba(240, 248, 255, 0.769);
-	padding: 5em;
+	padding: 2em;
+}
+.about-title {
+	margin-top: 12em;
+}
+.comment-area {
+	background-image: url('https://c4.wallpaperflare.com/wallpaper/417/673/89/black-texture-background-wallpaper-preview.jpg');
+	height: 40vh;
+	color: rgb(255, 255, 255);
+	margin-bottom: 3em;
+}
+#main {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.left-pillar {
+	width: 20%;
+	height: 100vh;
+	background-color: black;
+}
+
+.rigth-pillar {
+	width: 10%;
+	height: 100vh;
+	background-color: black;
 }

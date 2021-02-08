@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8" />
+		<meta charset="UTF-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<title>Storage Space - {% block title %}{% endblock %}</title>
@@ -37,22 +37,6 @@
 						</ul>
 					</div>
 				</nav>
-				{% comment %} <nav class="nav hide-on-medium-and-up">
-					<div class="nav-wrapper">
-						<ul>
-							<li class="nav-link">
-								<a href="" class="left brand-logo">&nbsp;&nbsp;StorageSpace</a>
-							</li>
-						</ul>
-						<ul class="right">
-							<li class="nav-link"><a href="{% url 'collection' %}">My Collection</a></li>
-							<li class="nav-link"><a href="{% url 'explore' %}">Explore Collections</a></li>
-							<li class="nav-link"><a href="{% url 'profile' %}">Profile</a></li>
-							<li class="nav-link"><a href="{% url 'about' %}">about</a></li>
-							<li class="nav-link"><a href="{% url 'logout' %}">Logout</a></li>
-						</ul>
-					</div>
-				</nav> {% endcomment %}
 			{% else %}
 				<nav class="nav">
 					<div class="nav-wrapper">
@@ -71,23 +55,16 @@
 						</ul>
 					</div>
 				</nav>
-				{% comment %} <nav class="nav hide-on-med-and-up">
-					<div class="nav-wrapper">
-						<ul>
-							<li class="nav-link"><a href="{% url 'register' %}" class="left brand-logo">&nbsp;&nbsp;StorageSpace</a></li>
-						</ul>
-						<ul class="right">
-							<li class="nav-link"><a href="{% url 'explore' %}">Explore Collections</a></li>
-							<li class="nav-link"><a href="{% url 'about' %}">about</a></li>
-							<li class="nav-link"><a href="{% url 'login' %}">Login</a></li>
-						</ul>
-					</div>
-				</nav> {% endcomment %}
 			{% endif %}
 		</header>
-		<main class="container"> {% block content %} {% endblock %} </main>
-		<br>
 
+		<main id="main" class="container">
+			<section class="left-pillar"></section>
+			<section id="center-pillar">
+				{% block content %} {% endblock %} 
+			</section>
+			<section class="right-pillar"></section>
+		</main>
 
 		<footer class="footer">
 			<div class="footer">
