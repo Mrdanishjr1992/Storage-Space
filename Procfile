@@ -1,1 +1,1 @@
-web: gunicorn storagespace_project.wsgi
+web: gunicorn storagespace.wsgi
