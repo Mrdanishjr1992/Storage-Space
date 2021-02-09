@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'storagespace_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': BASE_DIR | 'storagespace'
+        'NAME': 'storagespace'
     }
 }
 
