@@ -26,7 +26,7 @@ SECRET_KEY = 'yq73^clzx&fs4co7b5d#%4@!l_mhn8!y#5--1ipigrfo)etil9'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['my-storage-space.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -118,6 +118,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
+django_on_heroku.settings(locals())
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
@@ -130,5 +131,3 @@ LOGIN_REDIRECT_URL = 'explore'
 
 # LOGOUT_URL = '/'
 LOGOUT_REDIRECT_URL = 'login'
-
-django_on_heroku.settings(locals())
